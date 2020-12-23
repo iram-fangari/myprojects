@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="=width=device-width,initial-scale-1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bgcolor.css" />
+  </head>
+  <body>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: #8d5e98; */
+        background: url(components/pea.jpg) center/cover no-repeat;
+        text-transform: capitalize;
+        color: white;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-weight: 400;
+      }
+      .counter-box {
+        flex: 0 0 70%;
+        border: 1px solid black;
+        text-align: center;
+        padding: 1rem;
+        font-weight: bold;
+        box-shadow: 3px 3px 10px 10px black;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      .counter {
+        font-size: 6rem;
+      }
+      .btn {
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        margin: 5px;
+        box-shadow: 3px 5px black;
+      }
+      .btn:hover {
+        color: white;
+        background-color: gray;
+      }
+      .btn:active {
+        box-shadow: none;
+      }
+    </style>
+    <!--Counter-->
+    <div class="counter-box">
+      <h1>counter</h1>
+      <h1 class="counter">0</h1>
+      <div id="btns">
+        <button type="button" id="lowerCountBtn" class="btn">
+          lower count
+        </button>
+        <button type="button" id="addCountBtn" class="btn">add count</button>
+      </div>
+    </div>
+
+    <script src="script.js">
+            let counter = document.querySelector(".counter");
+      const addCount = document.querySelector("#addCountBtn");
+      const lowerCount = document.querySelector("#lowerCountBtn");
+      let count = 0;
+
+      addCount.addEventListener("click", incrementCounter);
+      lowerCount.addEventListener("click", decrementCounter);
+
+      function incrementCounter() {
+        count++;
+        counter.innerHTML = count;
+      }
+
+      function decrementCounter() {
+        count--;
+        counter.innerHTML = count;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="=width=device-width,initial-scale-1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bgcolor.css" />
+  </head>
+  <body>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: #8d5e98; */
+        /* background: url(components/pea.jpg) center/cover no-repeat; */
+        text-transform: capitalize;
+        color: white;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-weight: 400;
+      }
+      .colorBtn:hover {
+        background: #ecdc80;
+        margin: 1.5rem;
+        padding: 1.5rem;
+      }
+    </style>
+    <button class="colorBtn">Press here to change color</button>
+    <script src="script.js">
+      const colorBtn = document.querySelector(".colorBtn");
+      const bodyBg = document.querySelector("body");
+      const colors = ["red", "green", "blue", "aqua"];
+
+      colorBtn.addEventListener("click", changeColor);
+
+      function changeColor() {
+        let random = Math.floor(Math.random() * colors.length);
+        bodyBg.style.backgroundColor = colors[random];
+      }
+    </script>
+  </body>
+</html>
